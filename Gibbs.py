@@ -1,11 +1,3 @@
-"""
-Question 3 (10 points): Generate 100 random 1KB sequences (as if they are upstream of
-some genes, you can use real data from UCSC for some co-regulated genes as well). Plant a
-motif of length 10 after introducing 0,1,2 random mutations (uniformly distributed). Use
-Gibb’s sampler to identify the motif locations and the consensus motif.
-"""
-
-
 import random
 import math
 from numpy.random import choice
@@ -74,7 +66,7 @@ def gibbs(seq_with_motif, len_seq_with_motif, len_of_motif):
 
         """ Select score """
         # print(prob_for_this_run)
-        # print(prob_for_this_run.keys())  # iske index karte hain
+        # print(prob_for_this_run.keys())  
         keys = []
         values = []
         for k in prob_for_this_run.keys():
@@ -118,7 +110,6 @@ def find_consensus(set_seq, len_seq):
         consensus_str += consensus_char
 
     return consensus_str, profile_matrix
-# from Q1 creates profile and finds consensus,  returns consensus str and profile
 
 
 def make_mutation_set(seq, len_seq):
